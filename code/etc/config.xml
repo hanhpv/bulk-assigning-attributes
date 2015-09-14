@@ -5,4 +5,16 @@
             <version>0.1.0</version>
         </Dtn_Eav>
     </modules>
+    <global>
+        <resources>
+            <dtn_eav_setup>
+                <setup>
+                    <module>Dtn_Eav</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </dtn_eav_setup>
+        </resources>
+    </global>
 </config>
