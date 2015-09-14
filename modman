@@ -1,1 +1,3 @@
+code            app/code/local/Dtn/Eav
+Dtn_Eav.xml     app/etc/modules/Dtn_Eav.xml
 @shell echo 'Hello World'

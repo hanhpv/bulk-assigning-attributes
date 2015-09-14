@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <Dtn_Eav>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Dtn_Eav>
+    </modules>
+</config>
