@@ -6,6 +6,13 @@
         </Dtn_Eav>
     </modules>
     <global>
+        <block>
+            <adminhtml>
+                <rewrite>
+                    <catalog_product_attribute_edit_tabs>Dtn_Eav_Block_Adminhtml_Attribute_Edit_Tabs</catalog_product_attribute_edit_tabs>
+                </rewrite>
+            </adminhtml>
+        </block>
         <resources>
             <dtn_eav_setup>
                 <setup>
