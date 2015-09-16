@@ -1,3 +1,4 @@
-code            app/code/local/Dtn/Eav
-Dtn_Eav.xml     app/etc/modules/Dtn_Eav.xml
+code                            app/code/local/Dtn/Eav
+Dtn_Eav.xml                     app/etc/modules/Dtn_Eav.xml
+adminhtml/layout/dtn_eav.xml    app/design/adminhtml/default/default/layout/dtn_eav.xml
 @shell echo 'Hello World'

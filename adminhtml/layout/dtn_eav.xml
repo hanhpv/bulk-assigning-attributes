@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<layout>
+    <adminhtml_catalog_product_attribute_attributeSetsGrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="dtn_eav/adminhtml_attribute_edit_tab_attributeSets" name="attribute.edit.tab.sets"/>
+            <block type="adminhtml/widget_grid_serializer" name="sets_grid_serializer">
+                <action method="initSerializerBlock">
+                    <grid_block_name>attribute.edit.tab.sets</grid_block_name>
+                    <data_callback>getSelectedRelatedProducts</data_callback>
+                    <hidden_input_name>sets</hidden_input_name>
+                    <reload_param_name>selected_sets</reload_param_name>
+                </action>
+            </block>
+        </block>
+    </adminhtml_catalog_product_attribute_attributeSetsGrid>
+</layout>

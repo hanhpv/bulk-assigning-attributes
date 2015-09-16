@@ -6,13 +6,17 @@
         </Dtn_Eav>
     </modules>
     <global>
-        <block>
+        <blocks>
+            <dtn_eav>
+                <class>Dtn_Eav_Block</class>
+            </dtn_eav>
             <adminhtml>
                 <rewrite>
-                    <catalog_product_attribute_edit_tabs>Dtn_Eav_Block_Adminhtml_Attribute_Edit_Tabs</catalog_product_attribute_edit_tabs>
+                    <catalog_product_attribute_edit_tabs>Dtn_Eav_Block_Adminhtml_Attribute_Edit_Tabs
+                    </catalog_product_attribute_edit_tabs>
                 </rewrite>
             </adminhtml>
-        </block>
+        </blocks>
         <resources>
             <dtn_eav_setup>
                 <setup>
@@ -24,4 +28,24 @@
             </dtn_eav_setup>
         </resources>
     </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Dtn_Eav before="Mage_Adminhtml">Dtn_Eav_Adminhtml</Dtn_Eav>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <dtn_eav>
+                    <file>dtn_eav.xml</file>
+                </dtn_eav>
+            </updates>
+        </layout>
+    </adminhtml>
 </config>
