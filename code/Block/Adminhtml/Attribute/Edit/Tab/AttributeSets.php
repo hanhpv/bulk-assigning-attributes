@@ -65,19 +65,11 @@ class Dtn_Eav_Block_Adminhtml_Attribute_Edit_Tab_AttributeSets extends Mage_Admi
     public function getAttributeInSets()
     {
         $attribute = $this->_getCurrentAttribute();
-        $resource = Mage::getSingleton('core/resource');
-
-        $collection = Mage::getResourceModel('eav/entity_attribute_set_collection')
-            ->addFieldToFilter('main_table.entity_type_id', $this->getEntityTypeId());
-        $collection->getSelect()
-            ->join(array('entity_attribute' => $resource->getTableName('eav/entity_attribute')), 'main_table.attribute_set_id = entity_attribute.attribute_set_id', array())
-            ->where('entity_attribute.attribute_id = ?', $attribute->getId());
-
+        $collection = Mage::getModel('dtn_eav/resource_attribute')->getAttributeInSets($attribute);
         $attributeSets = array();
         foreach ($collection as $item) {
             $attributeSets[] = $item->getId();
         }
-
         return $attributeSets;
     }
 
@@ -96,5 +88,12 @@ class Dtn_Eav_Block_Adminhtml_Attribute_Edit_Tab_AttributeSets extends Mage_Admi
         } else {
             $collection->addFieldToFilter('main_table.attribute_set_id', array('nin' => $selected));
         }
+    }
+
+    public function getGridUrl()
+    {
+        return $this->getData('grid_url')
+            ? $this->getData('grid_url')
+            : $this->getUrl('*/*/attributeSetsGrid', array('_current' => true));
     }
 }

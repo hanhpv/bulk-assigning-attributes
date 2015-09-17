@@ -12,11 +12,15 @@
             </dtn_eav>
             <adminhtml>
                 <rewrite>
-                    <catalog_product_attribute_edit_tabs>Dtn_Eav_Block_Adminhtml_Attribute_Edit_Tabs
-                    </catalog_product_attribute_edit_tabs>
+                    <catalog_product_attribute_edit_tabs>Dtn_Eav_Block_Adminhtml_Attribute_Edit_Tabs</catalog_product_attribute_edit_tabs>
                 </rewrite>
             </adminhtml>
         </blocks>
+        <models>
+            <dtn_eav>
+                <class>Dtn_Eav_Model</class>
+            </dtn_eav>
+        </models>
         <resources>
             <dtn_eav_setup>
                 <setup>
@@ -47,5 +51,15 @@
                 </dtn_eav>
             </updates>
         </layout>
+        <events>
+            <catalog_entity_attribute_save_after>
+                <observers>
+                    <dtn_eav>
+                        <class>dtn_eav/observer</class>
+                        <method>catalogAttributeSaveAfter</method>
+                    </dtn_eav>
+                </observers>
+            </catalog_entity_attribute_save_after>
+        </events>
     </adminhtml>
 </config>

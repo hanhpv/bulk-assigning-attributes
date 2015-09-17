@@ -11,7 +11,7 @@ class Dtn_Eav_Block_Adminhtml_Attribute_Edit_Tabs extends Mage_Adminhtml_Block_C
             'label'     => Mage::helper('catalog')->__('Attribute Sets'),
             'title'     => Mage::helper('catalog')->__('Attribute Sets'),
             'class'     => 'ajax',
-			'url'       => $this->getUrl('*/*/attributeSetsGrid', array('_current' => true)),
+			'url'       => $this->getUrl('*/*/attributeSets', array('_current' => true)),
             'after'		=> 'labels'
         ));
 
